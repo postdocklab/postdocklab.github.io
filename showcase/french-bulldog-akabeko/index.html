@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>French Bulldog Akabeko</title>
+  <meta name="description" content="フレンチブルドッグをモチーフにした、遊び心のある赤べこ風民芸トイ。Brew、Duff、Brindleの3カラー。">
+  <style>
+    :root {
+      --bg: #f8f3ed;
+      --text: #2d2a27;
+      --sub: #6f6861;
+      --line: #eadfd3;
+      --accent-brown: #7b5f48;
+      --shadow: 0 18px 40px rgba(78, 53, 32, .10);
+      --radius-lg: 22px;
+      --max: 1120px
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Yu Gothic UI", sans-serif;
+      background: radial-gradient(circle at top left, #fffdf9 0%, #f8f3ed 42%, #f2e9df 100%);
+      line-height: 1.75
+    }
+
+    img {
+      max-width: 100%;
+      display: block
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto
+    }
+
+    .section {
+      margin-top: 20px
+    }
+
+    .hero {
+      padding: 20px 0 24px
+    }
+
+    .hero-card {
+      overflow: hidden;
+      border-radius: 32px;
+      background: linear-gradient(180deg, #fffaf6, #f8efe6);
+      border: 1px solid rgba(255, 255, 255, .8);
+      box-shadow: var(--shadow)
+    }
+
+    .hero-media {
+      padding: 18px
+    }
+
+    .hero-media img {
+      width: 100%;
+      border-radius: 24px;
+      object-fit: cover;
+      box-shadow: 0 18px 38px rgba(79, 51, 30, .12)
+    }
+
+    .hero-copy {
+      padding: 4px 24px 28px;
+      text-align: center
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #fff7ef;
+      border: 1px solid var(--line);
+      color: var(--accent-brown);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase
+    }
+
+    h1 {
+      margin: 16px 0 0;
+      font-size: clamp(34px, 7vw, 76px);
+      line-height: 1.02;
+      letter-spacing: .01em;
+      font-weight: 900
+    }
+
+    .lead {
+      width: min(760px, 100%);
+      margin: 16px auto 0;
+      color: var(--sub);
+      font-size: 16px
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 24px
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 15px;
+      transition: transform .15s ease
+    }
+
+    .btn:hover {
+      transform: translateY(-1px)
+    }
+
+    .btn.primary {
+      background: var(--text);
+      color: #fff
+    }
+
+    .btn.secondary {
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--text)
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 18px
+    }
+
+    .chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--line);
+      font-size: 13px;
+      color: var(--sub)
+    }
+
+    .panel {
+      background: rgba(255, 250, 245, .92);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: 22px
+    }
+
+    .panel h2 {
+      margin: 0 0 10px;
+      font-size: 28px;
+      line-height: 1.2
+    }
+
+    .panel-intro {
+      margin: 0;
+      color: var(--sub);
+      font-size: 15px
+    }
+
+    .story-grid,
+    .color-grid,
+    .feature-grid {
+      display: grid;
+      gap: 16px;
+      margin-top: 18px
+    }
+
+    .story-card,
+    .color-card,
+    .feature-card {
+      background: rgba(255, 255, 255, .78);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px
+    }
+
+    .story-card h3,
+    .color-card h3,
+    .feature-card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      line-height: 1.35
+    }
+
+    .story-card p,
+    .color-card p,
+    .feature-card p {
+      margin: 0;
+      color: var(--sub);
+      font-size: 14px
+    }
+
+    .swatch {
+      width: 100%;
+      height: 86px;
+      border-radius: 16px;
+      margin-bottom: 14px;
+      border: 1px solid rgba(0, 0, 0, .04)
+    }
+
+    .swatch.brew {
+      background: radial-gradient(circle at 25% 50%, rgba(255, 255, 255, .85) 0 16%, transparent 18%), radial-gradient(circle at 68% 65%, rgba(255, 255, 255, .85) 0 10%, transparent 12%), linear-gradient(135deg, #f6ebd8, #ead8bd)
+    }
+
+    .swatch.duff {
+      background: radial-gradient(circle at 78% 58%, rgba(242, 224, 168, .9) 0 11%, transparent 13%), linear-gradient(135deg, #d89b59, #b8783d)
+    }
+
+    .swatch.brindle {
+      background: radial-gradient(circle at 78% 58%, rgba(209, 166, 93, .9) 0 11%, transparent 13%), linear-gradient(135deg, #3c332d, #211d19);
+      position: relative
+    }
+
+    .swatch.brindle::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      background: repeating-linear-gradient(135deg, rgba(207, 160, 84, .18) 0 8px, rgba(0, 0, 0, 0) 8px 18px)
+    }
+
+    .product-card {
+      display: grid;
+      gap: 16px;
+      align-items: center;
+      background: linear-gradient(180deg, #fffdfb, #f7efe7);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 20px;
+      margin-top: 18px
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 18px
+    }
+
+    .product-copy h2 {
+      margin: 0 0 10px;
+      font-size: 30px;
+      line-height: 1.15
+    }
+
+    .product-copy p {
+      margin: 0;
+      color: var(--sub);
+      font-size: 15px
+    }
+
+    .product-copy .chips {
+      justify-content: flex-start
+    }
+
+    .timeline {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px
+    }
+
+    .timeline-num {
+      flex: 0 0 34px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--text);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 14px
+    }
+
+    .timeline-body h3 {
+      margin: 0 0 4px;
+      font-size: 16px
+    }
+
+    .timeline-body p {
+      margin: 0;
+      color: var(--sub);
+      font-size: 14px
+    }
+
+    .cta-panel {
+      text-align: center;
+      background: linear-gradient(180deg, #fff, #fbf5ed)
+    }
+
+    .cta-panel h2 {
+      margin: 0;
+      font-size: 30px;
+      line-height: 1.25
+    }
+
+    .cta-panel p {
+      margin: 12px auto 0;
+      color: var(--sub);
+      width: min(680px, 100%);
+      font-size: 15px
+    }
+
+    .footer {
+      padding: 24px 0 40px;
+      text-align: center;
+      color: #90867b;
+      font-size: 12px
+    }
+
+    @media (min-width:760px) {
+      .hero-media {
+        padding: 22px 22px 10px
+      }
+
+      .hero-copy {
+        padding: 8px 30px 34px
+      }
+
+      .story-grid,
+      .color-grid,
+      .feature-grid {
+        grid-template-columns: repeat(3, 1fr)
+      }
+
+      .product-card {
+        grid-template-columns: 1.08fr .92fr;
+        padding: 24px
+      }
+
+      .timeline {
+        grid-template-columns: repeat(3, 1fr)
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <section class="hero section">
+      <div class="hero-card">
+        <div class="hero-media">
+          <img src="./akabeko.jpeg" alt="French Bulldog Akabeko">
+        </div>
+        <div class="hero-copy">
+          <div class="eyebrow">folk toy concept</div>
+          <h1>French Bulldog<br>Akabeko</h1>
+          <p class="lead">フレンチブルドッグの愛らしさと、赤べこの民芸らしいユーモアをミックスしたコンセプトトイ。Brew、Duff、Brindle
+            の3つの毛色で、置いて楽しい、見てうれしい、ちょっと縁起のいい存在を目指しました。</p>
+          <div class="chips">
+            <span class="chip">Brew / Cream</span>
+            <span class="chip">Duff / Fawn</span>
+            <span class="chip">Brindle</span>
+            <span class="chip">folk toy style</span>
+          </div>
+          <div class="cta-row">
+            <a class="btn primary" href="#colors">3カラーを見る</a>
+            <a class="btn secondary" href="#story">コンセプトを見る</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="story">
+      <div class="panel">
+        <h2>What is French Bulldog Akabeko?</h2>
+        <p class="panel-intro">ただの犬の置物でも、ただの赤べこでもない。フレンチブルドッグの丸み、耳、表情を大切にしながら、民芸玩具らしい素朴さと、飾り物としての楽しさを残したシリーズです。</p>
+        <div class="story-grid">
+          <div class="story-card">
+            <h3>French Bulldog mood</h3>
+            <p>立ち耳、ぺちゃ鼻、愛嬌のある顔つき。リアルに寄せすぎず、“あの子らしさ” が伝わるバランスを目指しています。</p>
+          </div>
+          <div class="story-card">
+            <h3>Akabeko spirit</h3>
+            <p>民芸らしい胴体のかたち、首元の構造、ゆるい装飾感。“縁起物っぽい可愛さ” を軸にした造形コンセプトです。</p>
+          </div>
+          <div class="story-card">
+            <h3>Collectible feeling</h3>
+            <p>3体並べたときに色の違いが楽しく見えるよう、クリーム、フォーン、ブリンドルの個性をそれぞれ活かしています。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="colors">
+      <div class="panel">
+        <h2>Color Lineup</h2>
+        <p class="panel-intro">3つの毛色をベースに、赤べこらしい装飾モチーフを重ねたカラーバリエーションです。</p>
+        <div class="color-grid">
+          <div class="color-card">
+            <div class="swatch brew"></div>
+            <h3>Brew / Cream</h3>
+            <p>やわらかなクリームカラーをベースに、白い丸模様で軽やかに。やさしく穏やかな印象の1体です。</p>
+          </div>
+          <div class="color-card">
+            <div class="swatch duff"></div>
+            <h3>Duff / Fawn</h3>
+            <p>明るいフォーンの温かさを活かしながら、民芸玩具の楽しさが伝わる配色に。親しみやすく、飾りやすいカラーです。</p>
+          </div>
+          <div class="color-card">
+            <div class="swatch brindle"></div>
+            <h3>Brindle</h3>
+            <p>深みのあるブリンドルをベースに、伝統玩具らしい模様を重ねた1体。シックで少し大人っぽい佇まいです。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="product-card">
+        <img src="./hero-akabeko.png" alt="French Bulldog Akabeko lineup">
+        <div class="product-copy">
+          <h2>Three little charms,<br>one playful concept.</h2>
+          <p>3体並べると、色の違いだけでなく、置いたときの空気感そのものが楽しくなる。そんな “並べて可愛い” を意識したコレクションです。</p>
+          <div class="chips">
+            <span class="chip">folk toy</span>
+            <span class="chip">French bulldog</span>
+            <span class="chip">cute collectible</span>
+          </div>
+          <div class="cta-row" style="justify-content:flex-start;">
+            <a class="btn primary" href="#features">魅力を見る</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="panel">
+        <h2>Why it feels special</h2>
+        <p class="panel-intro">見た目の可愛さだけでなく、モチーフの組み合わせそのものに遊びがあるのが魅力です。</p>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h3>犬好きに刺さる</h3>
+            <p>フレンチブルドッグらしい丸みや表情があるから、フレブル好きの人にとって “わかる可愛さ” があります。</p>
+          </div>
+          <div class="feature-card">
+            <h3>民芸らしい抜け感</h3>
+            <p>きっちり作り込みすぎず、少し素朴で、少しゆるい。その抜け感があることで、飾ったときに空間がやさしくなります。</p>
+          </div>
+          <div class="feature-card">
+            <h3>ギフトにも映える</h3>
+            <p>縁起物っぽさ、動物モチーフ、遊び心。贈り物にしたときもストーリーが伝わりやすいデザインです。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="panel">
+        <h2>Concept Process</h2>
+        <p class="panel-intro">“フレブルらしさ” と “赤べこらしさ” の間を探りながら、可愛さのバランスを整えていくイメージです。</p>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-num">1</div>
+            <div class="timeline-body">
+              <h3>French Bulldog shape</h3>
+              <p>耳、鼻、顔の丸さなど、犬種らしい特徴を抽出します。</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-num">2</div>
+            <div class="timeline-body">
+              <h3>Folk toy simplification</h3>
+              <p>民芸玩具らしく、ヘタウマ感や素朴さを残しながら整理します。</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-num">3</div>
+            <div class="timeline-body">
+              <h3>Color personality</h3>
+              <p>Brew、Duff、Brindle の個性が並んで映えるように色を整えます。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="panel cta-panel">
+        <h2>French Bulldog Akabeko</h2>
+        <p>フレンチブルドッグの愛らしさを、ちょっとゆるく、ちょっと民芸風に。<br>並べて楽しい、眺めてうれしい、そんなコンセプトページです。</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#">お問い合わせ</a>
+          <a class="btn secondary" href="#">Instagram</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">French Bulldog Akabeko Concept Page</footer>
+  </main>
+</body>
+
+</html>
